@@ -20,13 +20,13 @@ export const IncomeExpenses = () => {
 
   React.useEffect(() => {
     setChartData([
-      { name: "Expense", value: +expense },
-      { name: "Income", value: +income },
+      { name: "Expense", value: +expense ,fill: "#d1220f"},
+      { name: "Income", value: +income , fill: "#00C49F"},
     ]);
     console.log(chartData);
   }, [income, expense]);
 
-  const COLORS = ["#d1220f", "#00C49F"];
+  const COLORS = [ "#d1220f","#00C49F"];
 
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
@@ -48,6 +48,7 @@ export const IncomeExpenses = () => {
         x={x}
         y={y}
         fill="white"
+        fontFamily='Bold'
         textAnchor={x > cx ? "start" : "end"}
         dominantBaseline="central"
       >
@@ -55,38 +56,37 @@ export const IncomeExpenses = () => {
       </text>
     );
   };
-  chartData.forEach((kis, index) => console.log(COLORS[index % COLORS.length]));
-
   return (
     <>
       <div className="expense">
         <div>
           <h4>Income</h4>
-          <p className="money plus">₹.{income}</p>
+          <p className="money plus">₹{income}</p>
         </div>
         <div>
           <h4>Expense</h4>
-          <p className="money minus">₹.{expense}</p>
+          <p className="money minus">₹{expense}</p>
         </div>
       </div>
-
-      <PieChart className="piechart" width={280} height={280}>
+      <div class ="chart-container">
+      <PieChart className="piechart" width={280} height={280} >
         <Pie
           data={chartData}
           cx="50%"
           cy="50%"
+          innerRadius={13}
           outerRadius={80}
-          // fill="#00C49F"
+          fill="#fff"
           label={renderCustomizedLabel}
+          paddingAngle={5}
         />
-        {/* {chartData.map((kis, index) => (
-          <Cell fill={COLORS[index % COLORS.length]} />
-        ))} */}
+        
         {chartData.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index]} />
-        ))}
+    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+  ))}
         <Tooltip />
       </PieChart>
+      </div>
     </>
   );
 };

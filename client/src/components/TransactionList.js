@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { Transaction } from './Transaction';
+
 import { GlobalContext } from '../context/GlobalState';
 
 export const TransactionList = () => {
@@ -7,7 +8,6 @@ export const TransactionList = () => {
 
   useEffect(() => {
     getTransactions();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

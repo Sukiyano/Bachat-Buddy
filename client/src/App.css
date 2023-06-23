@@ -1,17 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 :root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --box-shadow: 0 1px 3px rgba(243, 232, 232, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 * {
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color:#b9c9d7;
+  background: url("logo\ copy.png");
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size:90% ;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   min-height: 100vh;
   margin: 0;
@@ -24,10 +30,12 @@ body {
 }
 
 h1 {
-  background-color:  #447094;
-  letter-spacing: 5px;
+  background-color:  #3a7cb1;
+  letter-spacing: 1px;
   margin: 0;
   text-align: center;
+  border-radius: 15px;
+  margin-bottom: 10px;
 }
 
 h3 {
@@ -37,6 +45,8 @@ h3 {
 }
 
 h4 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 100%;
   margin: 0;
   text-transform: uppercase;
 }
@@ -76,6 +86,7 @@ h4 {
   display: flex;
   justify-content: space-between;
 }
+
 label {
   display: inline-block;
   margin: 10px 0;
@@ -110,12 +121,11 @@ input[type='number'] {
 }
 
 .list {
-  
-    max-height: 200px;
-    overflow: auto;
+  max-height: 200px;
   list-style-type: none;
   padding: 0;
   margin-bottom: 40px;
+   overflow-x: scroll;  
 }
 
 .list li {
@@ -145,7 +155,7 @@ input[type='number'] {
   font-size: 20px;
   line-height: 20px;
   padding: 2px 5px;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 0;
   transform: translate(-100%, -50%);
@@ -156,7 +166,6 @@ input[type='number'] {
 .list li:hover .delete-btn {
   opacity: 1;
 }
-
 .boxcss{
   position: absolute;
   top: 45%;
@@ -172,5 +181,23 @@ input[type='number'] {
 .piechart{
   height: 100px;
   width: 100px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer-content {
+  letter-spacing: 1px;
+  margin: 0;
+  background-color:#3a7cb1;
+  width: fit-content;
+  align-items: center;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
 
+  border-radius: 15px;
+  margin-bottom: 10px;
 }
